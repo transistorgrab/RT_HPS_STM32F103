@@ -31,7 +31,11 @@
 ///////////////////////////////////////////////////////////////////////////
 // GOS - One of these must be defined, preferably in your Makefile       //
 ///////////////////////////////////////////////////////////////////////////
-#define GFX_USE_OS_CHIBIOS                           GFXON
+// prevent compiler warnings:
+#define GOS_NEED_X_THREADS                          GFXOFF
+#define GOS_NEED_X_HEAP                             GFXOFF
+
+#define GFX_USE_OS_CHIBIOS                          GFXON
 //#define GFX_USE_OS_FREERTOS                          GFXOFF
 //    #define GFX_FREERTOS_USE_TRACE                   GFXOFF
 //#define GFX_USE_OS_WIN32                             GFXOFF
@@ -87,7 +91,7 @@
 //#define GDISP_NEED_CONVEX_POLYGON                    GFXOFF
 //#define GDISP_NEED_SCROLL                            GFXOFF
 //#define GDISP_NEED_PIXELREAD                         GFXOFF
-//#define GDISP_NEED_CONTROL                           GFXOFF
+#define GDISP_NEED_CONTROL                           GFXON
 //#define GDISP_NEED_QUERY                             GFXOFF
 //#define GDISP_NEED_MULTITHREAD                       GFXOFF
 //#define GDISP_NEED_STREAMING                         GFXOFF

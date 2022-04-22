@@ -80,11 +80,16 @@ THD_FUNCTION(ThreadOLED, arg) {
   spiStart(&SPID1, &hs_spicfg); /* SPI needs to be initialized before setting up the display */
   gfxInit();
 
+
+
   //u8g2_InitDisplay(&u8g2); // send init sequence to the display, display is in sleep mode after this,
   //u8g2_SetPowerSave(&u8g2, 0); // wake up display
 
-
-
+//  gFont font = gdispOpenFont("DejaVuSans12_aa");
+  gdispSetPowerMode(powerOn);
+//  gdispSetOrientation(GDISP_ROTATE_180);
+  int width = gdispGetWidth();
+  int height = gdispGetHeight();
   //chThdSleepMilliseconds(1000);
 
   //u8g2_DrawLine(&u8g2, 50,50, 100, 100);
@@ -102,6 +107,8 @@ THD_FUNCTION(ThreadOLED, arg) {
   while (true) {
  //   oledWriteRam(txbuf);   /* write txbuf to display RAM   */
     chThdSleepMilliseconds(500);
+    //gdispDrawString(2,2,"HPS Startup",font,GFX_GREY);
+    gdispDrawLine(5, 30, width - 50, height - 40, GFX_WHITE);
   }
 }
 
