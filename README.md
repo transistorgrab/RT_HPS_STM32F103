@@ -16,4 +16,4 @@ needs to be changed into
     ram = RAM(g)+xyaddr(x/2,y);
     
 at least that is the status today (2022-04-22).
-    
+2022-04-23: addressing of the x colums seems to be swapped.
