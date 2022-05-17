@@ -24,7 +24,11 @@ void oledCommand(uint8_t com){
   command[0] = com;
   spiSelect(&SPID1);                /** activate SPI chip select    */
   palClearLine(LINE_LCD_DAT_COMM);  /** set command bit to OLED     */
+#if SPI_USE_SYNCHRONIZATION == TRUE
   spiSend(&SPID1, 1, command);      /** send command                */
+#else
+  spiPolledExchange(&SPID1, com);
+#endif
   spiUnselect(&SPID1);              /** deactivate SPI chip select  */
 }
 
@@ -36,7 +40,11 @@ void oledData(uint8_t dat){
   data[0] = dat;
   spiSelect(&SPID1);                /** activate SPI chip select    */
   palSetLine(LINE_LCD_DAT_COMM);    /** set data bit to OLED        */
-  spiSend(&SPID1, 1, data);         /** send command                */
+#if SPI_USE_SYNCHRONIZATION == TRUE
+  spiSend(&SPID1, 1, data);         /** send data                   */
+#else
+  spiPolledExchange(&SPID1, dat);    /** send data                   */
+#endif
   spiUnselect(&SPID1);              /** deactivate SPI chip select  */
 }
 

@@ -198,7 +198,7 @@
 ///////////////////////////////////////////////////////////////////////////
 // GWIN                                                                  //
 ///////////////////////////////////////////////////////////////////////////
-//#define GFX_USE_GWIN                                 GFXOFF
+#define GFX_USE_GWIN                                 GFXON
 
 //#define GWIN_NEED_WINDOWMANAGER                      GFXOFF
 //    #define GWIN_REDRAW_IMMEDIATE                    GFXOFF
@@ -216,9 +216,9 @@
 //#define GWIN_NEED_GRAPH                              GFXOFF
 //#define GWIN_NEED_GL3D                               GFXOFF
 
-//#define GWIN_NEED_WIDGET                             GFXOFF
+#define GWIN_NEED_WIDGET                             GFXON
 //#define GWIN_FOCUS_HIGHLIGHT_WIDTH                   1
-//    #define GWIN_NEED_LABEL                          GFXOFF
+    #define GWIN_NEED_LABEL                          GFXON
 //        #define GWIN_LABEL_ATTRIBUTE                 GFXOFF
 //    #define GWIN_NEED_BUTTON                         GFXOFF
 //        #define GWIN_BUTTON_LAZY_RELEASE             GFXOFF
@@ -257,7 +257,7 @@
 ///////////////////////////////////////////////////////////////////////////
 // GEVENT                                                                //
 ///////////////////////////////////////////////////////////////////////////
-//#define GFX_USE_GEVENT                               GFXOFF
+#define GFX_USE_GEVENT                               GFXON
 
 //#define GEVENT_ASSERT_NO_RESOURCE                    GFXOFF
 //#define GEVENT_MAXIMUM_SIZE                          32
@@ -286,7 +286,7 @@
 ///////////////////////////////////////////////////////////////////////////
 // GINPUT                                                                //
 ///////////////////////////////////////////////////////////////////////////
-//#define GFX_USE_GINPUT                               GFXOFF
+#define GFX_USE_GINPUT                               GFXON
 
 //#define GINPUT_NEED_MOUSE                            GFXOFF
 //    #define GINPUT_TOUCH_STARTRAW                    GFXOFF
